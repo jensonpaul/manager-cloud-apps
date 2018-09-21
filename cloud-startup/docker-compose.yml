@@ -1,0 +1,50 @@
+version: "2"
+
+services:
+  mongo:
+    restart: always
+    image: mongo:4.0.2
+    container_name: mongo
+
+  reverse-proxy:
+    restart: always
+    image: reverse-proxy
+    container_name: reverse-proxy
+    environment:
+      - MONGODB_URL=mongo
+      - MONGODB_PORT=27017
+      - MONGODB_NAME=$MONGODB_NAME
+      - MONGODB_USER=$MONGODB_USER
+      - MONGODB_PW=$MONGODB_PW
+    ports:
+      - 4000:80
+      - 443:443
+    depends_on:
+      - backend-app
+      - mongo-express
+    links:
+      - backend-app
+      - mongo-express
+
+
+  backend-app:
+    restart: always
+    image: raminarmanfar/my-app-backend:0.1.0
+    container_name: backend-app
+    depends_on:
+      - mongo
+    environment:
+      - HTTP_PORT=5000
+      - MONGODB_URL=mongo
+      - MONGODB_PORT=27017
+      - MONGODB_NAME=$MONGODB_NAME
+      - MONGODB_USER=$MONGODB_USER
+      - MONGODB_PW=$MONGODB_PW
+    volumes:
+      - $DATA/DatabseFiles:/data/db
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    container_name: mongo-express
+      

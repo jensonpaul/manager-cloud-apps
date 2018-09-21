@@ -1,0 +1,6 @@
+version: "2"
+
+services:
+  mongo:
+    volumes:
+      - $DATA/db:/data/my-cloud-database
