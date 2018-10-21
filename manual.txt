@@ -1,6 +1,6 @@
 ssh -i ~/MyDocuments/ubuntu-aws-key.pem ubuntu@ec2-18-195-220-99.eu-central-1.compute.amazonaws.com
 
-sudo scp -r -i ~/MyDocuments/ubuntu-aws-key.pem ~/Projects/my-app-backend/my-cloud-manager ubuntu@ec2-18-195-220-99.eu-central-1.compute.amazonaws.com:~/
+sudo scp -r -i ~/myCloud/ubuntu-aws-key.pem ~/myCloud/manager-cloud-apps/ ubuntu@ec2-18-195-220-99.eu-central-1.compute.amazonaws.com:~/
 
 docker exec -it f91c376a59ef /bin/bash
 

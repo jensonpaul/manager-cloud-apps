@@ -38,7 +38,7 @@ services:
 
   frontend-app:
     restart: always
-    image: raminarmanfar/frontend-cloud-app:0.1.0
+    image: raminarmanfar/frontend-cloud-app:1.0.0
     container_name: frontend-app
     depends_on:
       - backend-app
