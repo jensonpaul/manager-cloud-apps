@@ -1,6 +1,16 @@
-ssh -i ~/MyDocuments/ubuntu-aws-key.pem ubuntu@ec2-18-195-220-99.eu-central-1.compute.amazonaws.com
+ssh -i ~/myCloud/ubuntu-aws-key.pem ubuntu@ec2-18-195-220-99.eu-central-1.compute.amazonaws.com
 
 sudo scp -r -i ~/myCloud/ubuntu-aws-key.pem ~/myCloud/manager-cloud-apps/ ubuntu@ec2-18-195-220-99.eu-central-1.compute.amazonaws.com:~/
 
 docker exec -it f91c376a59ef /bin/bash
+
+
+Steps to deploy:
+
+1- Create frontend docker images
+2- create backend docker images
+3- copy content of manager-cloud-app (current folder) into AWS using the command above (scp).
+4- login to the AWS terminal using the ssh command above.
+5- run "source .dev/definations.sh"
+6- run "bash ./up.sh"
 

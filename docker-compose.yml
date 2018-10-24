@@ -24,7 +24,7 @@ services:
 
   backend-app:
     restart: always
-    image: raminarmanfar/backend-cloud-app:0.1.0
+    image: raminarmanfar/backend-cloud-app:1.0.0
     container_name: backend-app
     depends_on:
       - mongo
