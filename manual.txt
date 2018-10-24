@@ -4,6 +4,9 @@ sudo scp -r -i ~/myCloud/ubuntu-aws-key.pem ~/myCloud/manager-cloud-apps/manager
 
 docker exec -it f91c376a59ef /bin/bash
 
+Run Alpine in bash mode:
+    $ docker run -it -p 80:80 raminarmanfar/frontend-cloud-app:1.0.0 /bin/sh
+
 in case of error in source .sh files:
     $ sed -i 's/\r$//' <filename>.sh
 
