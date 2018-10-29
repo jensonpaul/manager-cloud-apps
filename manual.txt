@@ -1,4 +1,4 @@
-ssh -i ~/myCloud/ubuntu-aws-key.pem ubuntu@ec2-52-59-224-215.eu-central-1.compute.amazonaws.com
+sudo ssh -i ~/myCloud/ubuntu-aws-key.pem ubuntu@ec2-52-59-224-215.eu-central-1.compute.amazonaws.com
 
 sudo scp -r -i ~/myCloud/ubuntu-aws-key.pem ~/myCloud/manager-cloud-apps/manager ubuntu@ec2-52-59-224-215.eu-central-1.compute.amazonaws.com:~/
 
